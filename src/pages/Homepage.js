@@ -9,6 +9,11 @@ import { Link } from "react-router-dom";
 //icons
 import { VscEmptyWindow } from "react-icons/vsc";
 
+//components
+import PostCard from "../components/PostCard";
+
+
+
 function Homepage() {
   //context
   const { posts } = UsePostContext();
@@ -37,10 +42,9 @@ function Homepage() {
 
       <div className="container grid grid-cols-4 gap-4 ">
         {posts.map((post) => (
-          <div className="col-span-1 ml-5 mt-5 bg-cyan-600" key={post._id}>
-            <h1>{post.title}</h1>
-            <p>{post.description}</p>
-          </div>
+          
+          <PostCard post={post} key={post._id} />
+          
         ))}
       </div>
     </>
